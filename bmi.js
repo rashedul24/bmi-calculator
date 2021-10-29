@@ -1,12 +1,18 @@
-const calculate = document.getElementById('calculate');
-
-
 const bmiCal = () => {
   const weightInput = document.getElementById('weight');
   const weight = weightInput.value;
   
   const heightInput = document.getElementById('height');
   const height = heightInput.value;
+  // error handle
+  if (weight === '' || weight<0 ) {
+    alert('please enter a valid weight')
+    return;
+  }
+  if (height === '' || height<0) {
+    alert('please enter a valid height')
+    return;
+  }
   // clear input field
   weightInput.value = '';
   heightInput.value = '';
