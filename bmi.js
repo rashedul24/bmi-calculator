@@ -28,7 +28,7 @@ const bmiCal = () => {
   result.innerText = '';
   // output
   div.innerHTML = ` 
-  <h2>Your BMI is ${calculation}</h2>
+  <h2>Your BMI is ${calculation.toFixed(2)}</h2>
   `
   result.appendChild(div);
 };
