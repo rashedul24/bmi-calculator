@@ -3,9 +3,9 @@ const bmiCal = () => {
   const weight = weightInput.value;
   
   const heightInput = document.getElementById('height');
-  const height = heightInput.value;
+  const heightInInch = heightInput.value;
   // error handle
-  if (weight === '' && height === '') {
+  if (weight === '' && heightInInch === '') {
     alert('Input field can not be empty.');
     return;
   }
@@ -13,7 +13,7 @@ const bmiCal = () => {
     alert('Please enter a valid Weight.');
     return;
   }
-  else if (height === '' || height < 0) {
+  else if (heightInInch === '' || heightInInch < 0) {
     alert('Please enter a valid Height.');
     return;
   }
@@ -21,6 +21,7 @@ const bmiCal = () => {
   weightInput.value = '';
   heightInput.value = '';
   // calculation
+  const height = heightInInch * 0.0254;
   const calculation = weight / (height * height);
   const result = document.getElementById('result');
   const div = document.createElement('div');
