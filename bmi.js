@@ -5,11 +5,15 @@ const bmiCal = () => {
   const heightInput = document.getElementById('height');
   const height = heightInput.value;
   // error handle
-  if (weight === '' || weight<0 ) {
+  if (weight === '' && height === '' ) {
+    alert('Input field can not be empty')
+    return;
+  }
+  else if (weight === '' || weight<0 ) {
     alert('please enter a valid weight')
     return;
   }
-  if (height === '' || height<0) {
+  else if(height === '' || height<0) {
     alert('please enter a valid height')
     return;
   }
